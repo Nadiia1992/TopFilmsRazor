@@ -1,0 +1,55 @@
+﻿@page
+@model TopFilmsRazor.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Деталі";
+}
+
+<h1>Деталі</h1>
+
+<div class="cont-form">
+    <h4>Фільм</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="@Url.Content(Model.Film?.Poster)" alt="@Model.Film?.Name" class="delete-img" />
+        </div>
+
+        <div class="col-md-8">
+            <h2>@Model.Film?.Name</h2>
+
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Film.Director)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Film.Director)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Film.Genre)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Film.Genre)
+                </dd>
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Film.Year)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Film.Year)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Film.Info)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Film.Info)
+                </dd>
+            </dl>
+        </div>
+        <div class="mt-3">
+            <a asp-page="Edit" asp-route-id="@Model.Film.Id" class="btn btn-warning">Редагувати</a>
+            <a asp-page="Index" class="btn btn-secondary ms-2">Повернутися до списку</a>
+        </div>
+        </div>
+</div>
+
